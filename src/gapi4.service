@@ -1,0 +1,12 @@
+[Unit]
+Description=Guest AP Pi-4 service
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/gapi4
+ExecStart=sudo /bin/bash /opt/gapi4/run.sh
+ExecStop=sudo systemctl stop hostapd
+
+[Install]
+WantedBy=default.target
+RequiredBy=network.target

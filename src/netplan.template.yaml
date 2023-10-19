@@ -1,0 +1,13 @@
+network:
+  renderer: networkd
+  version: 2
+  ethernets:
+      eth0:
+          optional: false
+      wlan0:
+          optional: false
+  bridges:
+    br0:
+      interfaces: [eth0, wlan0]
+      dhcp4: true
+      addresses: [{ip}/24]
